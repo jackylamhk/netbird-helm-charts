@@ -254,6 +254,9 @@ spec:
           {{- else if .Values.certVolume.enabled }}
           persistentVolumeClaim:
             claimName: {{ include "netbird-proxy.fullname" . }}-certs
+          {{- else if .Values.tls.existingSecret }}
+          secret:
+            secretName: {{ .Values.tls.existingSecret }}
           {{- else }}
           emptyDir: {}
           {{- end }}

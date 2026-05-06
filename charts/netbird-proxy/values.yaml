@@ -87,6 +87,7 @@ acme:
 tls:
   certFile: "tls.crt"
   keyFile: "tls.key"
+  existingSecret: ""
 
 oidc:
   clientId: "netbird-proxy"
